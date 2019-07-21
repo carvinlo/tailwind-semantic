@@ -43,7 +43,7 @@ module.exports = function(callback) {
   }
 
   tasks.push('build-javascript');
-  tasks.push('build-css');
+  tasks.push('build-css'); // tasks/build/css.js
   tasks.push('build-assets');
 
   runSequence(tasks, callback);

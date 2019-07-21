@@ -67,8 +67,8 @@ module.exports = function(callback) {
   }
 
   // unified css stream
-  stream = gulp.src(source.definitions + '/**/' + globs.components + '.less')
-    .pipe(plumber(settings.plumber.less))
+  stream = gulp.src(source.definitions + '/**/' + globs.components + '.less') // task/config/user.js -> task/config/default.js -> addDerivedValues var globs.components -> src/theme.config -> theme.less
+    .pipe(plumber(settings.plumber.less)) // task/config/tasks.js settings.plumber.less 捕捉异常 https://www.cnblogs.com/liangcheng11/p/6894943.html
     .pipe(less(settings.less))
     .pipe(autoprefixer(settings.prefix))
     .pipe(replace(comments.variables.in, comments.variables.out))
@@ -76,7 +76,7 @@ module.exports = function(callback) {
     .pipe(replace(comments.large.in, comments.large.out))
     .pipe(replace(comments.small.in, comments.small.out))
     .pipe(replace(comments.tiny.in, comments.tiny.out))
-    .pipe(flatten())
+    .pipe(flatten()) // 文件的层级 http://pinkyjie.com/2015/08/02/commonly-used-gulp-plugins-part-1/
   ;
 
   // two concurrent streams from same source to concat release

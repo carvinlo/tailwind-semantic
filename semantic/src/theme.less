@@ -57,5 +57,8 @@
 
 .loadUIOverrides() {
   @import (optional) "@{themesFolder}/@{theme}/@{type}s/@{element}.overrides";
+  /* reset.less引用举例：*/
+  /* theme.config[themesFolder]:themes/theme.config[@[reset.less[@element]:reset]:default/reset.less[@type]:global(s)/reset.less[@element]:reset */
+  /* themes/default/globals/reset */
   @import (optional) "@{siteFolder}/@{type}s/@{element}.overrides";
 }
