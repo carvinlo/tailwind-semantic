@@ -1,38 +1,45 @@
 # Tailwind CSS Playground
 
+## Semantic + Tailwind
+
+1. yarn
+2. yarn global add gulp
+3. cd semantic && gulp build
+4. cd .. && npm run serve
+
 A simple starter project for playing around with Tailwind in a proper PostCSS environment.
 
 To get started:
 
 1. Clone the repository:
 
-    ```bash
-    git clone https://github.com/tailwindcss/playground.git tailwindcss-playground
+   ```bash
+   git clone https://github.com/tailwindcss/playground.git tailwindcss-playground
 
-    cd tailwindcss-playground
-    ```
+   cd tailwindcss-playground
+   ```
 
 2. Install the dependencies:
 
-    ```bash
-    # Using npm
-    npm install
+   ```bash
+   # Using npm
+   npm install
 
-    # Using Yarn
-    yarn
-    ```
+   # Using Yarn
+   yarn
+   ```
 
 3. Start the development server:
 
-    ```bash
-    # Using npm
-    npm run serve
+   ```bash
+   # Using npm
+   npm run serve
 
-    # Using Yarn
-    yarn run serve
-    ```
+   # Using Yarn
+   yarn run serve
+   ```
 
-    Now you should be able to see the project running at localhost:8080.
+   Now you should be able to see the project running at localhost:8080.
 
 4. Open `public/index.html` in your editor and start experimenting!
 
