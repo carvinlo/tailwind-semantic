@@ -67,7 +67,7 @@ module.exports = function(callback) {
   }
 
   // unified css stream
-  stream = gulp.src(source.definitions + '/**/' + globs.components + '.less') // task/config/user.js -> task/config/default.js -> addDerivedValues var globs.components -> src/theme.config -> theme.less
+  stream = gulp.src(source.definitions + '/**/' + globs.components + '.less')// task/config/user.js -> task/config/default.js -> addDerivedValues var globs.components -> src/theme.config -> theme.less
     .pipe(plumber(settings.plumber.less)) // task/config/tasks.js settings.plumber.less 捕捉异常 https://www.cnblogs.com/liangcheng11/p/6894943.html
     .pipe(less(settings.less))
     .pipe(autoprefixer(settings.prefix))

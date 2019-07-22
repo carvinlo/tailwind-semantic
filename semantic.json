@@ -8,13 +8,18 @@
       "themes": "src/themes/"
     },
     "output": {
-      "packaged": "dist/",
-      "uncompressed": "dist/components/",
-      "compressed": "dist/components/",
-      "themes": "dist/themes/"
+      "packaged": "../public/semantic/",
+      "uncompressed": "../public/semantic/components/",
+      "compressed": "../public/semantic/components/",
+      "themes": "../public/semantic/themes/"
     },
-    "clean": "dist/"
+    "clean": "../public/semantic/"
   },
+  "components": [
+    "dimmer",
+    "modal",
+    "transition"
+  ],
   "permission": false,
   "autoInstall": false,
   "rtl": false,
