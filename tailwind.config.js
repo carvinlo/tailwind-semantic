@@ -1,6 +1,11 @@
 const { colors } = require('tailwindcss/defaultTheme');
+const { variants } = require('tailwindcss/defaultConfig');
 
 module.exports = {
+  variants: {
+    ...variants,
+    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
+  },
   theme: {
     extend: {
       colors: {
@@ -12,89 +17,39 @@ module.exports = {
     }
   },
   plugins: [
-    function ({ addUtilities, addComponents, e, prefix, config }) {
+    function ({ addUtilities, addComponents, addBase, addVariant, e, prefix, theme, variants, config }) {
+      // prefix: className 经过 config.prefix 处理
+      // e: className 经过 escaping string 转译，如 hover\:border-box
+      // const colors = theme('colors', {});
+      // const variants = theme('variants', {});
       // This function is your plugin
-      const newUtilities = {
+      /* const newUtilities = {
         '.border-box': {
-          transform: 'skewY(-10deg)',
+          borderBox: 'border-box',
         },
       }
-
       addUtilities(newUtilities, {
         variants: ['responsive', 'hover'],
-      })
+      }) */
+
+      const component = {
+        '@variants responsive, hover': {
+          '.border-box': {
+            borderBox: 'border-box',
+          },
+        },
+        '.border-box': {
+          borderBox: 'border-box',
+        },
+      }
+      addComponents([component], {
+        respectPrefix: false,
+      });
     },
   ],
   prefix: '',
   important: false,
   separator: ':',
-  variants: {
-    accessibility: ['responsive', 'focus'],
-    alignContent: ['responsive'],
-    alignItems: ['responsive'],
-    alignSelf: ['responsive'],
-    appearance: ['responsive'],
-    backgroundAttachment: ['responsive'],
-    backgroundColor: ['responsive', 'hover', 'focus'],
-    backgroundPosition: ['responsive'],
-    backgroundRepeat: ['responsive'],
-    backgroundSize: ['responsive'],
-    borderCollapse: ['responsive'],
-    borderColor: ['responsive', 'hover', 'focus'],
-    borderRadius: ['responsive'],
-    borderStyle: ['responsive'],
-    borderWidth: ['responsive'],
-    boxShadow: ['responsive', 'hover', 'focus'],
-    cursor: ['responsive'],
-    display: ['responsive'],
-    fill: ['responsive'],
-    flex: ['responsive'],
-    flexDirection: ['responsive'],
-    flexGrow: ['responsive'],
-    flexShrink: ['responsive'],
-    flexWrap: ['responsive'],
-    float: ['responsive'],
-    fontFamily: ['responsive'],
-    fontSize: ['responsive'],
-    fontSmoothing: ['responsive'],
-    fontStyle: ['responsive'],
-    fontWeight: ['responsive', 'hover', 'focus'],
-    height: ['responsive'],
-    inset: ['responsive'],
-    justifyContent: ['responsive'],
-    letterSpacing: ['responsive'],
-    lineHeight: ['responsive'],
-    listStylePosition: ['responsive'],
-    listStyleType: ['responsive'],
-    margin: ['responsive'],
-    maxHeight: ['responsive'],
-    maxWidth: ['responsive'],
-    minHeight: ['responsive'],
-    minWidth: ['responsive'],
-    objectFit: ['responsive'],
-    objectPosition: ['responsive'],
-    opacity: ['responsive'],
-    order: ['responsive'],
-    outline: ['responsive', 'focus'],
-    overflow: ['responsive'],
-    padding: ['responsive'],
-    pointerEvents: ['responsive'],
-    position: ['responsive'],
-    resize: ['responsive'],
-    stroke: ['responsive'],
-    tableLayout: ['responsive'],
-    textAlign: ['responsive'],
-    textColor: ['responsive', 'hover', 'focus'],
-    textDecoration: ['responsive', 'hover', 'focus'],
-    textTransform: ['responsive'],
-    userSelect: ['responsive'],
-    verticalAlign: ['responsive'],
-    visibility: ['responsive'],
-    whitespace: ['responsive'],
-    width: ['responsive'],
-    wordBreak: ['responsive'],
-    zIndex: ['responsive'],
-  },
   corePlugins: {
     preflight: false,
   },
