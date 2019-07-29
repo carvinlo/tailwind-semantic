@@ -23,16 +23,26 @@ module.exports = {
       // const colors = theme('colors', {});
       // const variants = theme('variants', {});
       // This function is your plugin
-      /* const newUtilities = {
-        '.border-box': {
-          borderBox: 'border-box',
+
+      // 增加伪类
+      ['before', 'after'].map(function (variant) {
+        addVariant(variant, ({ modifySelectors, separator }) => {
+          modifySelectors(({ className }) => {
+            return `.${e(`${variant}${separator}${className}`)}:${variant}`
+          })
+        })
+      });
+      
+      const borderSizing = {
+        '.border-sizing': {
+          boxSizing: 'border-box',
         },
       }
-      addUtilities(newUtilities, {
-        variants: ['responsive', 'hover'],
-      }) */
+      addUtilities(borderSizing, {
+        variants: ['before', 'after'],
+      })
 
-      const component = {
+      /* const component = {
         '@variants responsive, hover': {
           '.border-box': {
             borderBox: 'border-box',
@@ -44,7 +54,7 @@ module.exports = {
       }
       addComponents([component], {
         respectPrefix: false,
-      });
+      }); */
     },
   ],
   prefix: '',

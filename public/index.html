@@ -18,6 +18,12 @@
 </head>
 
 <body>
+  <div class="after:border-sizing after-test">test</div>
+  <style>
+    .after-test::after {
+      content: ""
+    }
+  </style>
   <div class="ui modal">
     <div class="header">
       模态框标题
