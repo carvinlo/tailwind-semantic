@@ -5,6 +5,7 @@ module.exports = {
   variants: {
     ...variants,
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
+    position: ['responsive', 'important'],
   },
   theme: {
     extend: {
@@ -32,7 +33,16 @@ module.exports = {
           })
         })
       });
-      
+      // 例如：!absolute
+      addVariant('important', ({ container }) => {
+        container.walkRules(rule => {
+          rule.selector = `.\\!${rule.selector.slice(1)}`
+          rule.walkDecls(decl => {
+            decl.important = true
+          })
+        })
+      })
+
       const borderSizing = {
         '.border-sizing': {
           boxSizing: 'border-box',
