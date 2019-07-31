@@ -117,6 +117,14 @@ module.exports = {
         variants: ['before', 'after'],
       })
 
+      const pingCenter = {
+        '.pin-center': {
+          top: '50%',
+          left: '50%',
+          transform: 'translateY(-50%) translateX(-50%)'
+        }
+      }
+      addUtilities(pingCenter, {})
       /* const component = {
         '@variants responsive, hover': {
           '.border-box': {
