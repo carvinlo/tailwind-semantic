@@ -74,6 +74,12 @@ module.exports = {
         screen: '100vh',
         'half-screen': '50vh',
       },
+      minWidth: {
+        '0': '0',
+        full: '100%',
+        screen: '100vw',
+        'half-screen': '50vw',
+      },
     }
   },
   plugins: [
