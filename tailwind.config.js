@@ -68,6 +68,12 @@ module.exports = {
         '6xl': '1152px',
         full: '100%',
       },
+      minHeight: {
+        '0': '0',
+        full: '100%',
+        screen: '100vh',
+        'half-screen': '50vh',
+      },
     }
   },
   plugins: [
