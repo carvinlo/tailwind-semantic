@@ -41,7 +41,7 @@
     "better-console": "*",
     "del": "^3.0.0",
     "extend": "^3.0.2",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-chmod": "^2.0.0",
     "gulp-clean-css": "^3.10.0",
@@ -73,7 +73,7 @@
     "replace-ext": "^1.0.0",
     "require-dot-file": "^0.4.0",
     "run-sequence": "^2.2.1",
-    "semantic-ui": "^2.4.2",
+    "semantic-ui": "^2.5.0",
     "tailwindcss": "^1.0",
     "wrench-sui": "^0.0.3",
     "yamljs": "^0.3.0"
